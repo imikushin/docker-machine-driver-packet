@@ -55,8 +55,8 @@ print-success:
 build: compile print-success
 
 cross:
-	for os in darwin windows linux; do \
-		for arch in amd64; do \
+	for os in linux; do \
+		for arch in arm; do \
 			GOOS=$$os GOARCH=$$arch BIN_SUFFIX=_$$os-$$arch $(MAKE) compile & \
 		done; \
 	done; \
